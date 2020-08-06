@@ -2,7 +2,7 @@ module.exports = {
   colors: {
     primary: "#231E41", //dark purple
     secondary: "#EEFBE8", //mint green
-    tertiary: "#687D4E", //light purple
+    tertiary: "#687D4E", //medium green
     text: "#6C6687", //light purple
     background: "#ffffff",
   },

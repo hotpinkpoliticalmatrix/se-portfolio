@@ -2,11 +2,8 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-import Config from "../config/"
 import ContentWrapper from "../styles/ContentWrapper"
 import Logo from "./logo"
-
-const { footerLinks } = Config
 
 const StyledFooter = styled.footer`
   width: 100%;
@@ -32,14 +29,6 @@ const StyledContentWrapper = styled(ContentWrapper)`
       }
     }
   }
-`
-
-const StyledLink = styled(Link)`
-  font-size: 0.875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #ffffff;
-  letter-spacing: 1px;
 `
 
 const Footer = () => (

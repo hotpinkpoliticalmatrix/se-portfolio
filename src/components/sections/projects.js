@@ -182,7 +182,7 @@ const StyledProject = styled(motion.div)`
   .screenshot {
     width: 100%;
     max-width: 25rem;
-    height: 15rem;
+    height: 100%;
     border-radius: ${({ theme }) => theme.borderRadius};
     box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
     transition: all 0.3s ease-out;
@@ -208,6 +208,7 @@ const Projects = ({ content }) => {
   // instead they use react-visibility-sensor, therefore their visibility
   // is also stored differently
   const [onScreen, setOnScreen] = useState({})
+  console.log(onScreen, setOnScreen)
   const handleOnScreen = el => {
     if (!onScreen[el]) {
       const updatedOnScreen = { ...onScreen }
@@ -336,19 +337,19 @@ const Projects = ({ content }) => {
       </StyledContentWrapper>
       {sectionDetails.frontmatter.buttonVisible === "true" && (
         <motion.a
-        ref={bRef}
-        variants={bVariants}
-        animate={bOnScreen ? "visible" : "hidden"}
-        className="cta-btn"
-        href={sectionDetails.frontmatter.buttonUrl}
-        target="_blank"
-        rel="nofollow noopener noreferrer"
-        aria-label="External Link"
-      >
-        <Button type="button" textAlign="center" color="primary" center>
-          {sectionDetails.frontmatter.buttonText}
-        </Button>
-      </motion.a>
+          ref={bRef}
+          variants={bVariants}
+          animate={bOnScreen ? "visible" : "hidden"}
+          className="cta-btn"
+          href={sectionDetails.frontmatter.buttonUrl}
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+          aria-label="External Link"
+        >
+          <Button type="button" textAlign="center" color="primary" center>
+            {sectionDetails.frontmatter.buttonText}
+          </Button>
+        </motion.a>
       )}
     </StyledSection>
   )

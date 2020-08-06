@@ -137,12 +137,14 @@ const StyledProject = styled(motion.div)`
       margin-top: 0;
     }
     .category {
+      color: ${({ theme }) => theme.colors.primary};
       font-size: 0.875rem;
       line-height: 1rem;
       text-transform: uppercase;
       letter-spacing: +1px;
     }
     .title {
+      color: ${({ theme }) => theme.colors.primary};
       margin-top: 0.625rem;
       margin-bottom: 0.625rem;
       font-size: 1.375rem;
@@ -150,6 +152,7 @@ const StyledProject = styled(motion.div)`
       font-weight: 700;
     }
     .tags {
+      color: ${({ theme }) => theme.colors.primary};
       display: flex;
       flex-wrap: wrap;
       margin-top: 1.5rem;
@@ -182,7 +185,7 @@ const StyledProject = styled(motion.div)`
   .screenshot {
     width: 100%;
     max-width: 25rem;
-    height: 100%;
+    height: 20rem;
     border-radius: ${({ theme }) => theme.borderRadius};
     box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
     transition: all 0.3s ease-out;
@@ -208,7 +211,6 @@ const Projects = ({ content }) => {
   // instead they use react-visibility-sensor, therefore their visibility
   // is also stored differently
   const [onScreen, setOnScreen] = useState({})
-  console.log(onScreen, setOnScreen)
   const handleOnScreen = el => {
     if (!onScreen[el]) {
       const updatedOnScreen = { ...onScreen }
@@ -249,7 +251,6 @@ const Projects = ({ content }) => {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
   }
-
   return (
     <StyledSection id="projects">
       <StyledContentWrapper>
@@ -266,6 +267,7 @@ const Projects = ({ content }) => {
         <div className="projects">
           {projects.map(project => {
             const { body, frontmatter } = project.node
+            console.log(frontmatter)
             return (
               <VisibilitySensor
                 key={frontmatter.position}

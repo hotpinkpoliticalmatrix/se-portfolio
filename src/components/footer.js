@@ -48,11 +48,11 @@ const Footer = () => (
       <Link to="/" aria-label="home">
         <Logo color="white" size="1.5rem" />
       </Link>
-      <div className="footer-links">
+      {/* <div className="footer-links">
         {footerLinks.map(({ name, url }, key) => (
           <StyledLink key={key} to={url}>{name}</StyledLink>
         ))}
-      </div>
+      </div> */}
     </StyledContentWrapper>
   </StyledFooter>
 )

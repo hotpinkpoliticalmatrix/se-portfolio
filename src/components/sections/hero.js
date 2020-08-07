@@ -34,6 +34,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
       display: flex;
       justify-content: flex-start;
       align-items: center;
+      margin-bottom: 1rem;
+      font-size: 40px;
     }
     .emoji {
       margin-left: 0.75rem;
@@ -47,16 +49,20 @@ const StyledContentWrapper = styled(ContentWrapper)`
     }
     .title {
       margin-bottom: 1.5rem;
+      font-size: 50px;
       @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
         margin-bottom: 0;
       }
     }
     .subtitle {
-      margin-top: -0.9rem;
+      margin-top: -0.6rem;
+      margin-left: 0.8rem;
+      font-size: 23px;
     }
     .description {
-      font-size: 1.125rem;
+      font-size: 1rem;
       margin-bottom: 2rem;
+      margin-left: 1.7rem;
     }
   }
 `

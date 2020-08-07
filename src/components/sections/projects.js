@@ -267,7 +267,6 @@ const Projects = ({ content }) => {
         <div className="projects">
           {projects.map(project => {
             const { body, frontmatter } = project.node
-            console.log(frontmatter)
             return (
               <VisibilitySensor
                 key={frontmatter.position}

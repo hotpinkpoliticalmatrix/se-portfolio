@@ -1,5 +1,5 @@
-const config = require('./src/config');
-const theme = require('./src/styles/Theme')
+const config = require("./src/config")
+const theme = require("./src/styles/Theme")
 
 module.exports = {
   siteMetadata: {

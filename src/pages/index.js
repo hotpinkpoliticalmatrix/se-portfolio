@@ -15,9 +15,8 @@ const IndexPage = ({ data }) => (
   <Layout splashScreen={splashScreen}>
     <SEO title="Stacey Eliuk | Fullstack Engineer" />
     <Hero content={data.hero.edges} />
-    {/* Articles is populated via Medium RSS Feed fetch */}
     <About content={data.about.edges} />
-    <Proficiencies content={data.interests.edges} />
+    <Proficiencies content={data.proficiencies.edges} />
     <Projects content={data.projects.edges} />
     <Contact content={data.contact.edges} />
   </Layout>
@@ -68,12 +67,14 @@ export const pageQuery = graphql`
         }
       }
     }
-    interests: allMdx(filter: { fileAbsolutePath: { regex: "/interests/" } }) {
+    proficiencies: allMdx(
+      filter: { fileAbsolutePath: { regex: "/proficiencies/" } }
+    ) {
       edges {
         node {
           exports {
             shownItems
-            interests {
+            proficiencies {
               name
               icon {
                 childImageSharp {

@@ -52,7 +52,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
       }
     }
     .subtitle {
-      margin-top: -0.75rem;
+      margin-top: -0.9rem;
     }
     .description {
       font-size: 1.125rem;
@@ -99,7 +99,7 @@ const Hero = ({ content }) => {
     }
     pageLoadSequence()
   }, [isIntroDone, eControls, gControls, sControls, uControls])
-  
+
   return (
     <StyledSection id="hero">
       {!isIntroDone && <SplashScreen />}
@@ -108,8 +108,14 @@ const Hero = ({ content }) => {
           <h1 className="title">
             <div className="greetings">
               {frontmatter.greetings}
-              <motion.div animate={eControls} style={{ originX: 0.7, originY: 0.7 }}>
-                <Img className="emoji" fluid={frontmatter.icon.childImageSharp.fluid} />
+              <motion.div
+                animate={eControls}
+                style={{ originX: 0.7, originY: 0.7 }}
+              >
+                <Img
+                  className="emoji"
+                  fluid={frontmatter.icon.childImageSharp.fluid}
+                />
               </motion.div>
             </div>
             {frontmatter.title}

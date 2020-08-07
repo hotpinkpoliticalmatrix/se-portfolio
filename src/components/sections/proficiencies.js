@@ -110,7 +110,7 @@ const StyledInterests = styled.div`
 
 const Proficiencies = ({ content }) => {
   const { exports, frontmatter } = content[0].node
-  const { shownItems, interests } = exports
+  const { shownItems, proficiencies } = exports
 
   const [shownInterests, setShownInterests] = useState(shownItems)
 
@@ -125,9 +125,9 @@ const Proficiencies = ({ content }) => {
     // Otherwise interests.mdx will determine how many interests are shown
     // (isSSR) is used to prevent error during gatsby build
     if (!isSSR && detectMobileAndTablet(window.innerWidth)) {
-      setShownInterests(interests.length)
+      setShownInterests(proficiencies.length)
     }
-  }, [interests])
+  }, [proficiencies])
 
   useEffect(() => {
     const sequence = async () => {
@@ -151,8 +151,8 @@ const Proficiencies = ({ content }) => {
     <StyledSection id="interests">
       <StyledContentWrapper>
         <h3 className="section-title">{frontmatter.title}</h3>
-        <StyledInterests itemCount={interests.length} ref={ref}>
-          {interests.slice(0, shownInterests).map(({ name, icon }, key) => (
+        <StyledInterests itemCount={proficiencies.length} ref={ref}>
+          {proficiencies.slice(0, shownInterests).map(({ name, icon }, key) => (
             <motion.div
               className="interest"
               key={key}
@@ -163,7 +163,7 @@ const Proficiencies = ({ content }) => {
               <Img className="icon" fixed={icon.childImageSharp.fixed} /> {name}
             </motion.div>
           ))}
-          {shownInterests < interests.length && (
+          {shownInterests < proficiencies.length && (
             <motion.div initial={{ opacity: 0, scaleY: 0 }} animate={bControls}>
               <Button
                 onClick={() => showMoreItems()}

@@ -14,7 +14,7 @@ import Navbar from "./navbar"
 const StyledHeader = motion.custom(styled.header`
   width: 100%;
   height: ${({ theme }) => theme.headerHeight};
-  background: ${({ theme }) => theme.colors.background};
+  background: ${({ theme }) => theme.colors.primary};
 `)
 
 const StyledContentWrapper = styled(ContentWrapper)`
@@ -53,7 +53,7 @@ const StyledBurger = styled.button`
   div {
     width: 2rem;
     height: 0.25rem;
-    background: ${({ theme }) => theme.colors.primary};
+    background: ${({ theme }) => theme.colors.background};
     border-radius: 0.625rem;
     transition: all 0.3s ease-in-out;
     position: relative;
@@ -125,7 +125,7 @@ const Header = () => {
       <Helmet bodyAttributes={{ class: open ? "blur" : "" }} />
       <StyledContentWrapper>
         <Link to="/" aria-label="home">
-          <Logo color="primary" size="2rem" />
+          <Logo color="background" size="2rem" />
         </Link>
         {navigation}
       </StyledContentWrapper>

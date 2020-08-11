@@ -23,8 +23,6 @@ const StyledContentWrapper = styled(ContentWrapper)`
   && {
     width: 100%;
     height: 100%;
-
-    contrast: 125%;
     overflow: hidden;
     // background: #c33764; /* fallback colour. Make sure this is just one solid colour. */
     // background: -webkit-linear-gradient(
@@ -71,10 +69,11 @@ const StyledContentWrapper = styled(ContentWrapper)`
       }
     }
     .king {
-      opacity: 0.5;
+      opacity: 0.25;
       width: 100vw;
       max-height: 600px;
       object-fit: cover;
+      filter: contrast(150%);
     }
     .title {
       margin-bottom: 1.5rem;

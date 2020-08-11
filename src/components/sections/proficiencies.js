@@ -21,10 +21,10 @@ const StyledContentWrapper = styled(ContentWrapper)`
     width: 100%;
     height: 100%;
     display: flex;
+    margin-left: 70px;
+    margin-right: 70px;
     flex-direction: column;
     justify-content: center;
-    padding-right: 0;
-    padding-left: 0;
     @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
       padding-right: 2.5rem;
       padding-left: 2.5rem;

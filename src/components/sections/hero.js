@@ -11,6 +11,7 @@ import Underlining from "../../styles/Underlining"
 import Social from "../social"
 import SplashScreen from "../splashScreen"
 import Theme from "../../styles/Theme"
+import king from "../../content/hero/king.jpg"
 
 const StyledSection = styled.section`
   width: 100%;
@@ -22,14 +23,33 @@ const StyledContentWrapper = styled(ContentWrapper)`
   && {
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    // background: #c33764; /* fallback colour. Make sure this is just one solid colour. */
+    // background: -webkit-linear-gradient(
+    //   rgba(29, 38, 113, 0.8),
+    //   rgba(195, 55, 100, 0.8)
+    // );
+    // background: linear-gradient(
+    //   rgba(32, 30, 65, 0.8),
+    //   rgba(195, 55, 100, 0.8)
+    // ); /* The least supported option. */
+
     min-height: 60vh;
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 6rem;
     @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
       margin-bottom: 4rem;
     }
+    .text {
+      position: absolute;
+      top: 100px;
+      left: 70px;
+      width: 100%;
+    }
+
     .greetings {
       display: flex;
       justify-content: flex-start;
@@ -37,6 +57,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
       margin-bottom: 1rem;
       font-size: 40px;
     }
+
     .emoji {
       margin-left: 0.75rem;
       width: 2.2rem;
@@ -46,6 +67,13 @@ const StyledContentWrapper = styled(ContentWrapper)`
         width: 3rem;
         height: 3rem;
       }
+    }
+    .king {
+      opacity: 0.25;
+      width: 100vw;
+      max-height: 600px;
+      object-fit: cover;
+      filter: contrast(150%);
     }
     .title {
       margin-bottom: 1.5rem;
@@ -63,6 +91,9 @@ const StyledContentWrapper = styled(ContentWrapper)`
       font-size: 1rem;
       margin-bottom: 2rem;
       margin-left: 1.7rem;
+    }
+    .description span {
+      background-color: white;
     }
   }
 `
@@ -110,36 +141,41 @@ const Hero = ({ content }) => {
     <StyledSection id="hero">
       {!isIntroDone && <SplashScreen />}
       <StyledContentWrapper>
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={gControls}>
-          <h1 className="title">
-            <div className="greetings">
-              {frontmatter.greetings}
-              <motion.div
-                animate={eControls}
-                style={{ originX: 0.7, originY: 0.7 }}
-              >
-                <Img
-                  className="emoji"
-                  fluid={frontmatter.icon.childImageSharp.fluid}
-                />
-              </motion.div>
+        <img className="king" src={king} alt="king" />
+        <div className="text">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={gControls}>
+            <h1 className="title">
+              <div className="greetings">
+                <span>{frontmatter.greetings}</span>
+                <motion.div
+                  animate={eControls}
+                  style={{ originX: 0.7, originY: 0.7 }}
+                >
+                  <Img
+                    className="emoji"
+                    fluid={frontmatter.icon.childImageSharp.fluid}
+                  />
+                </motion.div>
+              </div>
+              <span>{frontmatter.title}</span>
+            </h1>
+            <h2 className="subtitle">
+              {frontmatter.subtitlePrefix}{" "}
+              {/* Hover state color can be set in useEffect hook */}
+              <AnimatedUnderlining animate={uControls} color="tertiary" big>
+                <span>{frontmatter.subtitle}</span>
+              </AnimatedUnderlining>
+            </h2>
+            <div className="description">
+              <span>
+                <MDXRenderer>{body}</MDXRenderer>
+              </span>
             </div>
-            {frontmatter.title}
-          </h1>
-          <h2 className="subtitle">
-            {frontmatter.subtitlePrefix}{" "}
-            {/* Hover state color can be set in useEffect hook */}
-            <AnimatedUnderlining animate={uControls} color="tertiary" big>
-              {frontmatter.subtitle}
-            </AnimatedUnderlining>
-          </h2>
-          <div className="description">
-            <MDXRenderer>{body}</MDXRenderer>
-          </div>
-        </motion.div>
-        <motion.div initial={{ opacity: 0, x: 20 }} animate={sControls}>
-          <Social fontSize=".95rem" padding=".3rem 1.25rem" width="auto" />
-        </motion.div>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, x: 20 }} animate={sControls}>
+            <Social fontSize=".95rem" padding=".3rem 1.25rem" width="auto" />
+          </motion.div>
+        </div>
       </StyledContentWrapper>
     </StyledSection>
   )

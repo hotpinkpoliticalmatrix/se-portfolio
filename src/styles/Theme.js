@@ -16,7 +16,7 @@ module.exports = {
     primary: "Roboto, Arial, sans-serif",
   },
   borderRadius: "1rem",
-  pageWidth: "62.5rem",
+  pageWidth: "100rem",
   headerHeight: "6.25rem",
   footerHeight: "7.5rem",
 }

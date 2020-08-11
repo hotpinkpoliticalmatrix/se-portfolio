@@ -17,6 +17,8 @@ const StyledSection = styled.section`
   height: auto;
   background: ${({ theme }) => theme.colors.background};
   margin-top: 6rem;
+  padding-left: 70px;
+  padding-right: 70px;
   .cta-btn {
     display: block;
     text-align: center;
@@ -34,6 +36,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
     position: relative;
     display: flex;
     flex-direction: column;
+    text-align: justify;
+    text-justify: inter-word;
     justify-content: center;
     padding-right: 0;
     padding-left: 0;

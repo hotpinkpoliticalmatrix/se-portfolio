@@ -20,6 +20,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
     width: 100%;
     height: 100%;
     display: flex;
+    padding-left: 70px;
+    padding-right: 70px;
     flex-direction: column;
     justify-content: space-between;
     @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
@@ -37,6 +39,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
     .text-content {
       width: 100%;
       max-width: 31.25rem;
+      text-align: justify;
+      text-justify: inter-word;
     }
     .image-content {
       width: 100%;

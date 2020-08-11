@@ -14,17 +14,7 @@ if (typeof window !== "undefined") {
   require("smooth-scroll")('a[href*="#"]')
 }
 
-const StyledLayoutWrapper = styled.div`
-  width: 100%;
-  min-height: 100vh;
-  margin: 0 auto;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: 100%;
-`
-
 const Layout = ({ children, splashScreen }) => {
-  
   // you can determine whether you want to have a splashScreen
   // for each page in the respective page component
   // if splashScreen = false, we set isIntroDone = true to skip
@@ -34,16 +24,14 @@ const Layout = ({ children, splashScreen }) => {
   })
 
   return (
-    <StyledLayoutWrapper>
-      <Context.Provider value={{ state, setState }}>
-        <ThemeProvider theme={Theme}>
-          <GlobalStyle />
-          <Header />
-          <main id="main-content">{children}</main>
-          <Footer />
-        </ThemeProvider>
-      </Context.Provider>
-    </StyledLayoutWrapper>
+    <Context.Provider value={{ state, setState }}>
+      <ThemeProvider theme={Theme}>
+        <GlobalStyle />
+        <Header />
+        <main id="main-content">{children}</main>
+        <Footer />
+      </ThemeProvider>
+    </Context.Provider>
   )
 }
 

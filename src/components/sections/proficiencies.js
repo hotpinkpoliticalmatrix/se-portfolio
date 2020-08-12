@@ -148,7 +148,7 @@ const Proficiencies = ({ content }) => {
   const showMoreItems = () => setShownInterests(shownInterests + 4)
 
   return (
-    <StyledSection id="interests">
+    <StyledSection id="proficiencies">
       <StyledContentWrapper>
         <h3 className="section-title">{frontmatter.title}</h3>
         <StyledInterests itemCount={proficiencies.length} ref={ref}>

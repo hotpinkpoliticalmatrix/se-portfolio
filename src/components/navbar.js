@@ -13,9 +13,9 @@ const StyledNav = styled.nav`
     justify-content: space-between;
     align-items: center;
     width: 31.25rem;
-    background: ${({ theme }) => theme.colors.background};
+    background: ${({ theme }) => theme.colors.primary};
     a {
-      color: ${({ theme }) => theme.colors.primary};
+      color: ${({ theme }) => theme.colors.background};
     }
   }
   .nav-link {
@@ -43,14 +43,16 @@ const StyledNav = styled.nav`
     height: auto;
     font-weight: 700;
     border-radius: ${({ theme }) => theme.borderRadius};
-    border: 0.125rem solid ${({ theme }) => theme.colors.primary};
     background: ${({ theme }) => theme.colors.background};
-    transition: 20ms ease-out;
+    color: ${({ theme }) => theme.colors.primary};
+    transition: 0.3s;
     font-size: 1rem;
+    border: 0.125rem solid ${({ theme }) => theme.colors.background};
     padding: 0.5rem 1.5rem;
     margin: 0;
     &:hover {
-      background: ${({ theme }) => theme.colors.primary};
+      background: ${({ theme }) => theme.colors.tertiary};
+      border: 0.125rem solid ${({ theme }) => theme.colors.tertiary};
       color: #ffffff;
     }
   }

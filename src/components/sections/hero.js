@@ -23,31 +23,65 @@ const StyledContentWrapper = styled(ContentWrapper)`
   && {
     width: 100%;
     height: 100%;
-    overflow: hidden;
-    // background: #c33764; /* fallback colour. Make sure this is just one solid colour. */
-    // background: -webkit-linear-gradient(
-    //   rgba(29, 38, 113, 0.8),
-    //   rgba(195, 55, 100, 0.8)
-    // );
-    // background: linear-gradient(
-    //   rgba(32, 30, 65, 0.8),
-    //   rgba(195, 55, 100, 0.8)
-    // ); /* The least supported option. */
-
     min-height: 60vh;
     display: flex;
-    position: relative;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 6rem;
     @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
       margin-bottom: 4rem;
     }
+  }
+
+  @media only screen and (min-width: 601px) {
+    && {
+    overflow: visible;
+    position: relative;
+    }
     .text {
-      position: absolute;
-      top: 100px;
-      left: 70px;
-      width: 100%;
+        position: absolute;
+        top: 100px;
+        left: 70px;
+        width: 100%;
+    }
+  }
+
+
+    @media only screen and (min-width: 0px) {
+      .text {
+        padding-left: 40px;
+        top: 150px;
+      }
+      .greetings {
+        font-size: 20px;
+      }
+      .title: {
+          font-size: 24px;
+        }
+        .text {
+              font-size: 40px;
+
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+      && {
+        overflow: visible;
+      }
+      .greetings {
+        font-size: 30px;
+      }
+      .text {
+        position: relative;
+        left: 25px;
+        top: -150px;
+      }
+      .subtitle {
+        font-size: 18px;
+      }
+      .title {
+        font-size: 34px;
+      }
     }
 
     .greetings {
@@ -129,7 +163,7 @@ const Hero = ({ content }) => {
         })
         // Animate underlining to hover state
         await uControls.start({
-          boxShadow: `inset 0 -2rem 0 ${Theme.colors.secondary}`,
+          boxShadow: `inset 0 -2rem 0 ${Theme.colors.tertiary}`,
           transition: { delay: 0.4, ease: "circOut" },
         })
       }
@@ -162,7 +196,12 @@ const Hero = ({ content }) => {
             <h2 className="subtitle">
               {frontmatter.subtitlePrefix}{" "}
               {/* Hover state color can be set in useEffect hook */}
-              <AnimatedUnderlining animate={uControls} color="tertiary" big>
+              <AnimatedUnderlining
+                animate={uControls}
+                color="electric"
+                opacity=".8"
+                big
+              >
                 <span>{frontmatter.subtitle}</span>
               </AnimatedUnderlining>
             </h2>

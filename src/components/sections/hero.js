@@ -31,27 +31,44 @@ const StyledContentWrapper = styled(ContentWrapper)`
     @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
       margin-bottom: 4rem;
     }
-  }
 
-  @media only screen and (min-width: 601px) {
-    && {
-    overflow: visible;
-    position: relative;
-    }
-    .text {
+    @media only screen and (min-width: 601px) {
+      && {
+        overflow: visible;
+        position: relative;
+      }
+      .text {
         position: absolute;
         top: 100px;
         left: 70px;
         width: 100%;
+      }
     }
-  }
 
-
-    @media only screen and (max-width: 600px) {
+    @media (max-width: 440px) {
       && {
         margin-bottom: -200px;
         overflow: visible;
+      }
+      .text {
+        padding-left: 40px;
+        top: 150px;
+      }
+      .greetings {
+        font-size: 20px;
+      }
+      .title: {
+        font-size: 24px;
+      }
+      .text {
+        font-size: 40px;
+      }
+    }
 
+    @media (min-width: 441px) and (max-width: 600px) {
+      && {
+        margin-bottom: -200px;
+        overflow: visible;
       }
       .text {
         padding-left: 8px;
@@ -61,16 +78,14 @@ const StyledContentWrapper = styled(ContentWrapper)`
         font-size: 20px;
       }
       .title: {
-          font-size: 24px;
-        }
+        font-size: 24px;
+      }
       .text {
-            font-size: 40px;
-
+        font-size: 40px;
       }
     }
 
     @media screen and (max-width: 600px) {
-
       .greetings {
         font-size: 30px;
       }

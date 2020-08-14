@@ -21,8 +21,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
     width: 100%;
     height: 100%;
     display: flex;
-    margin-left: 70px;
-    margin-right: 70px;
+    margin-left: 44px;
+    margin-right: 44px;
     flex-direction: column;
     justify-content: center;
 
@@ -41,13 +41,13 @@ const StyledInterests = styled.div`
   /* Calculate how many columns are needed, depending on interests count */
   grid-template-columns: repeat(
     ${({ itemCount }) => Math.ceil(itemCount / 2)},
-    15.625rem
+    12rem
   );
   grid-template-rows: repeat(6, auto);
   grid-auto-flow: column;
   column-gap: 1rem;
   row-gap: 1rem;
-  padding: 1rem;
+  padding: 8px;
   overflow-x: scroll;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
@@ -62,9 +62,12 @@ const StyledInterests = styled.div`
   }
   @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
     grid-auto-flow: row;
-    grid-template-columns: repeat(3, 15.625rem);
+    grid-template-columns: repeat(3, 16.625rem);
     overflow: visible;
     padding: 0;
+    .interest {
+      width: 16.625rem;
+    }
   }
   /* Show scrollbar if desktop and wrapper width > viewport width */
   @media (hover: hover) {
@@ -90,7 +93,7 @@ const StyledInterests = styled.div`
   }
 
   .interest {
-    width: 15.625rem;
+    width: 12rem;
     height: 3rem;
     display: flex;
     justify-content: flex-start;
@@ -100,6 +103,9 @@ const StyledInterests = styled.div`
     border-radius: ${({ theme }) => theme.borderRadius};
     .icon {
       margin-right: 0.5rem;
+    }
+    @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+      width: 16.625rem;
     }
   }
 `

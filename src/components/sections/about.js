@@ -51,6 +51,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
         margin-left: 2rem;
       }
     }
+
     .about-author {
       border-radius: ${({ theme }) => theme.borderRadius};
       box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
@@ -63,6 +64,11 @@ const StyledContentWrapper = styled(ContentWrapper)`
       }
     }
   }
+  @media only screen and (max-width: 600px) {
+    && {
+      margin-left: -30px;
+      width: 113%
+    }
 `
 
 const About = ({ content }) => {

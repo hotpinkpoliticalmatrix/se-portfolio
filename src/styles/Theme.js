@@ -8,9 +8,10 @@ module.exports = {
     background: "#ffffff", //white
   },
   breakpoints: {
-    xs: "480px",
+    xxs: "480px",
+    xs: "600px",
     sm: "768px",
-    md: "992px",
+    md: "1024px",
     lg: "1200px",
   },
   fonts: {

@@ -25,18 +25,14 @@ const StyledContentWrapper = styled(ContentWrapper)`
     margin-right: 70px;
     flex-direction: column;
     justify-content: center;
-    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-      padding-right: 2.5rem;
-      padding-left: 2.5rem;
-    }
-    .section-title {
-      padding-right: 2.5rem;
-      padding-left: 2.5rem;
-      @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-        padding-right: 0;
-        padding-left: 0;
-      }
-    }
+
+    // .section-title {
+
+    //   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    //     padding-right: 0;
+    //     padding-left: 0;
+    //   }
+    // }
   }
 `
 
@@ -47,11 +43,11 @@ const StyledInterests = styled.div`
     ${({ itemCount }) => Math.ceil(itemCount / 2)},
     15.625rem
   );
-  grid-template-rows: repeat(2, auto);
+  grid-template-rows: repeat(6, auto);
   grid-auto-flow: column;
   column-gap: 1rem;
   row-gap: 1rem;
-  padding: 0 2.5rem;
+  padding: 1rem;
   overflow-x: scroll;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
@@ -64,7 +60,7 @@ const StyledInterests = styled.div`
     width: ${({ itemCount }) =>
       Math.ceil(itemCount / 2) % 2 === 1 ? "17.125rem" : "2.5rem"};
   }
-  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
     grid-auto-flow: row;
     grid-template-columns: repeat(3, 15.625rem);
     overflow: visible;

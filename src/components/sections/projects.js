@@ -193,6 +193,8 @@ const StyledProject = styled(motion.div)`
     border-radius: ${({ theme }) => theme.borderRadius};
     box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
     transition: all 0.3s ease-out;
+    padding-left: 20px;
+
     &:hover {
       transform: translate3d(0px, -0.125rem, 0px);
       box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.32);
@@ -327,6 +329,8 @@ const Projects = ({ content }) => {
                   </div>
                   {/* If image in viewport changes, update state accordingly */}
                   <VisibilitySensor
+                    display="none"
+                    paddingLeft="20px"
                     onChange={() => setVisibleProject(frontmatter.position)}
                   >
                     <Img

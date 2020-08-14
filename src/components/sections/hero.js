@@ -47,9 +47,14 @@ const StyledContentWrapper = styled(ContentWrapper)`
   }
 
 
-    @media only screen and (min-width: 0px) {
+    @media only screen and (max-width: 600px) {
+      && {
+        margin-bottom: -200px;
+        overflow: visible;
+
+      }
       .text {
-        padding-left: 40px;
+        padding-left: 8px;
         top: 150px;
       }
       .greetings {
@@ -58,16 +63,14 @@ const StyledContentWrapper = styled(ContentWrapper)`
       .title: {
           font-size: 24px;
         }
-        .text {
-              font-size: 40px;
+      .text {
+            font-size: 40px;
 
-        }
+      }
     }
 
     @media screen and (max-width: 600px) {
-      && {
-        overflow: visible;
-      }
+
       .greetings {
         font-size: 30px;
       }

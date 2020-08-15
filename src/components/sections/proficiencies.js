@@ -112,7 +112,6 @@ const Proficiencies = ({ content }) => {
   const { shownItems, proficiencies, knowledgable } = exports
 
   const [shownInterests, setShownInterests] = useState(shownItems)
-  console.log(knowledgable)
   const ref = useRef()
   const onScreen = useOnScreen(ref)
   const iControls = useAnimation()

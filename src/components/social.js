@@ -8,7 +8,9 @@ import Icon from "./icons"
 const { socialMedia } = config
 
 const StyledSocialWrapper = styled.div`
-  display: grid;
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    display: grid;
+  }
   /* Calculate columns, depending on how many profiles there are */
   grid-template-columns: repeat(${({ itemCount }) => itemCount + 1}, auto);
   justify-content: start;

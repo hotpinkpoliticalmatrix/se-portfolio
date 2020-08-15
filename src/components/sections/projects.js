@@ -352,11 +352,7 @@ const Projects = ({ content }) => {
           target="_blank"
           rel="nofollow noopener noreferrer"
           aria-label="External Link"
-        >
-          <Button type="button" textAlign="center" color="primary" center>
-            {sectionDetails.frontmatter.buttonText}
-          </Button>
-        </motion.a>
+        ></motion.a>
       )}
     </StyledSection>
   )

@@ -2,7 +2,7 @@
 
 #### A portfolio of changes
 
-<img src="screenshot.png" alt="Stacey Eliuk Portfolio Screenshot" width="600" />
+<img src="screenshot.png" alt="Stacey Eliuk Portfolio Screenshot" width="400" />
 
 ---
 

@@ -46,8 +46,6 @@ const StyledContentWrapper = styled(ContentWrapper)`
       padding-left: 2.5rem;
     }
     .section-title {
-      padding-right: 2.5rem;
-      padding-left: 2.5rem;
       @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
         padding-right: 0;
         padding-left: 0;
@@ -57,7 +55,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
       display: flex;
       flex-direction: row;
       margin-top: -2.5rem;
-      padding: 2.5rem 2.5rem;
+      padding: 1rem 1rem;
       overflow-x: scroll;
       overflow-y: hidden;
       -webkit-overflow-scrolling: touch;
@@ -125,7 +123,7 @@ const StyledProject = styled(motion.div)`
     justify-content: space-between;
     flex-shrink: 1;
     max-width: 62.5rem;
-    margin-bottom: 10rem;
+    margin-bottom: 4rem;
     padding-right: 0;
     /* Positioning of image and details should vary */
     flex-direction: ${({ position }) =>
@@ -191,7 +189,7 @@ const StyledProject = styled(motion.div)`
     max-width: 25rem;
     height: 20rem;
     border-radius: ${({ theme }) => theme.borderRadius};
-    box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.16);
+    box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.16);
     transition: all 0.3s ease-out;
     padding-left: 20px;
 

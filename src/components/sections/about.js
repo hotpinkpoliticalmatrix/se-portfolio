@@ -67,7 +67,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
   @media only screen and (max-width: 600px) {
     && {
       margin-left: -20px;
-      width: 108%
+      width: 106%
     }
 `
 

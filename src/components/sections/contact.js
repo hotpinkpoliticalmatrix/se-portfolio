@@ -26,8 +26,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
     max-width: 45rem;
     height: 100%;
     display: inline-block;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 60px;
+    padding-right: 60px;
     p {
       margin-top: 0;
       margin-bottom: 0;

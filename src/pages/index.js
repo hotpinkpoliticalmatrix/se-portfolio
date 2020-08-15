@@ -84,9 +84,21 @@ export const pageQuery = graphql`
                 }
               }
             }
+
+            knowledgable {
+              name
+              icon {
+                childImageSharp {
+                  fixed(width: 20, height: 20, quality: 90) {
+                    ...GatsbyImageSharpFixed
+                  }
+                }
+              }
+            }
           }
           frontmatter {
             title
+            subtitle
           }
         }
       }

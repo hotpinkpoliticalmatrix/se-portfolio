@@ -26,13 +26,10 @@ const StyledContentWrapper = styled(ContentWrapper)`
     flex-direction: column;
     justify-content: center;
 
-    // .section-title {
-
-    //   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-    //     padding-right: 0;
-    //     padding-left: 0;
-    //   }
-    // }
+    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
   }
 `
 
@@ -41,7 +38,7 @@ const StyledInterests = styled.div`
   /* Calculate how many columns are needed, depending on interests count */
   grid-template-columns: repeat(
     ${({ itemCount }) => Math.ceil(itemCount / 2)},
-    12rem
+    13rem
   );
   grid-template-rows: repeat(6, auto);
   grid-auto-flow: column;
@@ -60,7 +57,7 @@ const StyledInterests = styled.div`
     width: ${({ itemCount }) =>
       Math.ceil(itemCount / 2) % 2 === 1 ? "17.125rem" : "2.5rem"};
   }
-  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+  @media (min-width: 890px) {
     grid-auto-flow: row;
     grid-template-columns: repeat(3, 16.625rem);
     overflow: visible;
@@ -93,7 +90,7 @@ const StyledInterests = styled.div`
   }
 
   .interest {
-    width: 12rem;
+    width: 13rem;
     height: 3rem;
     display: flex;
     justify-content: flex-start;
@@ -104,7 +101,7 @@ const StyledInterests = styled.div`
     .icon {
       margin-right: 0.5rem;
     }
-    @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    @media (min-width: 890px) {
       width: 16.625rem;
     }
   }
@@ -112,13 +109,12 @@ const StyledInterests = styled.div`
 
 const Proficiencies = ({ content }) => {
   const { exports, frontmatter } = content[0].node
-  const { shownItems, proficiencies } = exports
+  const { shownItems, proficiencies, knowledgable } = exports
 
   const [shownInterests, setShownInterests] = useState(shownItems)
-
+  console.log(knowledgable)
   const ref = useRef()
   const onScreen = useOnScreen(ref)
-
   const iControls = useAnimation()
   const bControls = useAnimation()
 
@@ -166,6 +162,34 @@ const Proficiencies = ({ content }) => {
             </motion.div>
           ))}
           {shownInterests < proficiencies.length && (
+            <motion.div initial={{ opacity: 0, scaleY: 0 }} animate={bControls}>
+              <Button
+                onClick={() => showMoreItems()}
+                type="button"
+                textAlign="left"
+                color="primary"
+              >
+                + Load more
+              </Button>
+            </motion.div>
+          )}
+        </StyledInterests>
+      </StyledContentWrapper>
+      <StyledContentWrapper>
+        <h3 className="section-title">{frontmatter.subtitle}</h3>
+        <StyledInterests itemCount={knowledgable.length} ref={ref}>
+          {knowledgable.slice(0, shownInterests).map(({ name, icon }, key) => (
+            <motion.div
+              className="interest"
+              key={key}
+              custom={key}
+              initial={{ opacity: 0, scaleY: 0 }}
+              animate={iControls}
+            >
+              <Img className="icon" fixed={icon.childImageSharp.fixed} /> {name}
+            </motion.div>
+          ))}
+          {shownInterests < knowledgable.length && (
             <motion.div initial={{ opacity: 0, scaleY: 0 }} animate={bControls}>
               <Button
                 onClick={() => showMoreItems()}

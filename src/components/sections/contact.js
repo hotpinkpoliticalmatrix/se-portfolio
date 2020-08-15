@@ -23,7 +23,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
   && {
     width: 100%;
     /* Don't stretch container over the full page width */
-    max-width: 45rem;
+    max-width: 50rem;
     height: 100%;
     display: inline-block;
     padding-left: 60px;
@@ -97,7 +97,12 @@ const Contact = ({ content }) => {
             </a>
           </div>
         </div>
-        <Social width="9rem" padding="0.5rem 1.25rem" withIcon />
+        <Social
+          className="social"
+          width="9rem"
+          padding="0.5rem 1.25rem"
+          withIcon
+        />
       </StyledContentWrapper>
     </StyledSection>
   )

@@ -24,7 +24,7 @@
 
    ```
 
-2. **Create a new Gatsby site with the Portfolio Minimal starter.**
+2. **Create a new Gatsby site with this repo.**
 
    ```
    gatsby new portfolio-minimal https://github.com/hotpinkpoliticalmatrix/se-portfolio

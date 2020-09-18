@@ -27,13 +27,13 @@
 2. **Create a new Gatsby site with this repo.**
 
    ```
-   gatsby new portfolio-minimal https://github.com/hotpinkpoliticalmatrix/se-portfolio
+   gatsby new portfolio https://github.com/hotpinkpoliticalmatrix/se-portfolio
    ```
 
 3. **Start the site in `develop` mode.**
 
    ```
-   cd portfolio-minimal
+   cd portfolio
    gatsby develop
    ```
 
@@ -41,7 +41,7 @@
 
 ---
 
-I always appreciate feedback, so share your thoughts and suggestions with me: [seliukfsa@gmail.com](mailto:seliukfsa@gmail.com)
+I appreciate feedback, so share your thoughts and suggestions with me: [seliukfsa@gmail.com](mailto:seliukfsa@gmail.com)
 
 This portfolio was branched off [Konstantin Muenster's](https://www.konstantin.digital/) excellent gatsby starter site portfolio. If you want to use it yourself, check out the repo on github [here](https://github.com/konstantinmuenster/gatsby-starter-portfolio-minimal)!
 

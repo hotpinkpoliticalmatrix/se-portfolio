@@ -107,9 +107,9 @@ const StyledInterests = styled.div`
   }
 `
 
-const Proficiencies = ({ content }) => {
+const Knowledgable = ({ content }) => {
   const { exports, frontmatter } = content[0].node
-  const { shownItems, proficiencies } = exports
+  const { shownItems, knowledgable } = exports
 
   const [shownInterests, setShownInterests] = useState(shownItems)
   const ref = useRef()
@@ -122,9 +122,9 @@ const Proficiencies = ({ content }) => {
     // Otherwise interests.mdx will determine how many interests are shown
     // (isSSR) is used to prevent error during gatsby build
     if (!isSSR && detectMobileAndTablet(window.innerWidth)) {
-      setShownInterests(proficiencies.length)
+      setShownInterests(knowledgable.length)
     }
-  }, [proficiencies])
+  }, [knowledgable])
 
   useEffect(() => {
     const sequence = async () => {
@@ -145,36 +145,8 @@ const Proficiencies = ({ content }) => {
   const showMoreItems = () => setShownInterests(shownInterests + 4)
 
   return (
-    <StyledSection id="proficiencies">
+    <StyledSection id="knowledgable">
       <StyledContentWrapper>
-        <h3 className="section-title">{frontmatter.title}</h3>
-        <StyledInterests itemCount={proficiencies.length} ref={ref}>
-          {proficiencies.slice(0, shownInterests).map(({ name, icon }, key) => (
-            <motion.div
-              className="interest"
-              key={key}
-              custom={key}
-              initial={{ opacity: 0, scaleY: 0 }}
-              animate={iControls}
-            >
-              <Img className="icon" fixed={icon.childImageSharp.fixed} /> {name}
-            </motion.div>
-          ))}
-          {shownInterests < proficiencies.length && (
-            <motion.div initial={{ opacity: 0, scaleY: 0 }} animate={bControls}>
-              <Button
-                onClick={() => showMoreItems()}
-                type="button"
-                textAlign="left"
-                color="primary"
-              >
-                + Load more
-              </Button>
-            </motion.div>
-          )}
-        </StyledInterests>
-      </StyledContentWrapper>
-      {/* <StyledContentWrapper>
         <h3 className="section-title">{frontmatter.subtitle}</h3>
         <StyledInterests itemCount={knowledgable.length} ref={ref}>
           {knowledgable.slice(0, shownInterests).map(({ name, icon }, key) => (
@@ -201,17 +173,17 @@ const Proficiencies = ({ content }) => {
             </motion.div>
           )}
         </StyledInterests>
-      </StyledContentWrapper> */}
+      </StyledContentWrapper>
     </StyledSection>
   )
 }
 
-Proficiencies.propTypes = {
+Knowledgable.propTypes = {
   content: PropTypes.arrayOf(
     PropTypes.shape({
       node: PropTypes.shape({
         exports: PropTypes.shape({
-          proficiencies: PropTypes.array.isRequired,
+          knowledgable: PropTypes.array.isRequired,
           shownItems: PropTypes.number.isRequired,
         }).isRequired,
         frontmatter: PropTypes.object.isRequired,
@@ -220,4 +192,4 @@ Proficiencies.propTypes = {
   ).isRequired,
 }
 
-export default Proficiencies
+export default Knowledgable

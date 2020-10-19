@@ -10,6 +10,7 @@ import Proficiencies from "../components/sections/proficiencies"
 import Projects from "../components/sections/projects"
 import Contact from "../components/sections/contact"
 import { splashScreen } from "../config"
+import Knowledgable from "../components/sections/knowledgable"
 
 const IndexPage = ({ data }) => (
   <Layout splashScreen={splashScreen}>
@@ -17,6 +18,7 @@ const IndexPage = ({ data }) => (
     <Hero content={data.hero.edges} />
     <About content={data.about.edges} />
     <Proficiencies content={data.proficiencies.edges} />
+    <Knowledgable content={data.knowledgable.edges} />
     <Projects content={data.projects.edges} />
     <Contact content={data.contact.edges} />
   </Layout>
@@ -84,13 +86,30 @@ export const pageQuery = graphql`
                 }
               }
             }
-
+          }
+          frontmatter {
+            title
+            subtitle
+          }
+        }
+      }
+    }
+    knowledgable: allMdx(
+      filter: { fileAbsolutePath: { regex: "/proficiencies/" } }
+    ) {
+      edges {
+        node {
+          exports {
+            shownItems
             knowledgable {
               name
               icon {
                 childImageSharp {
                   fixed(width: 20, height: 20, quality: 90) {
-                    ...GatsbyImageSharpFixed
+                    srcWebp
+                    src
+                    width
+                    height
                   }
                 }
               }

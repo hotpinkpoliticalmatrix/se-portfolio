@@ -9,7 +9,6 @@ import { motion } from "framer-motion"
 import { useOnScreen } from "../../hooks"
 import ContentWrapper from "../../styles/ContentWrapper"
 import Underlining from "../../styles/Underlining"
-import Button from "../../styles/Button"
 import Icon from "../../components/icons"
 
 const StyledSection = styled.section`
